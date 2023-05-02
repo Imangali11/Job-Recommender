@@ -19,7 +19,13 @@ from job_recommend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signup/', views.signup),
-    path('signin/', views.signin),
-    path('showjob/', views.showjob)
+    path('', views.homepage, name="homepage"),
+    path('register/', views.register_request, name="register"),
+    path('login/', views.login_request, name="login"),
+    path('upload/', views.upload_pdf, name="upload"),
+    path('results/', views.show_results, name="results"), 
+    path('resumes/', views.resumes, name="resumes"),
+    path('resumes/<int:id>', views.resume_detail),  
+    path('edit/', views.edit_request, name="edit"),
+    path('resultserror/', views.results_error, name="resultserror")
 ]

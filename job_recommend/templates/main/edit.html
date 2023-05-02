@@ -1,0 +1,16 @@
+{% extends 'main/header.html' %}
+{% load crispy_forms_tags %}  
+{% block content %}
+<div class="container py-5">
+  <h1>Edit Profile</h1>
+  <div>
+    <p>Current Username:{{user.username}}</p>
+    <p> Current Email: {{user.email}}</p>
+  </div>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form_edit|crispy }}
+    <button class="btn btn-primary" type="submit">Edit</button>
+</form> 
+</div>
+{%endblock%}

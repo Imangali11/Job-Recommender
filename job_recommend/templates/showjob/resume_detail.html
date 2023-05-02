@@ -1,0 +1,11 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+<h1>Do you want to use this file?</h1>
+<h2>{{resume.pdf_file}}</h2>
+<form method="get" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Confirm</button>
+</form>
+{% endblock %}
